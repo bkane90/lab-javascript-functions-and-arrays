@@ -1,18 +1,61 @@
 // Iteration #1: Find the maximum
 
+function maxOfTwoNumbers(x, y) {
+  if(x > y) {
+    return x;
+  } else {
+    return y;
+  }
+}
+
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
+
+function findLongestWord(words) {
+
+  let longestWord = '';
+
+  for(let word of words) {
+    if(word.length > longestWord.length){
+      longestWord = word;
+    }
+  }
+  return longestWord || null;
+}
 
 // Iteration #3: Calculate the sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
+function sumNumbers(numbers){
+  let sum = 0;
+  for(let number of numbers) {
+    sum += number;
+  }
+  return sum || 0;
+}
+
+
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
+function averageNumbers (numbers) {
+  return sumNumbers (numbers) / numbers.length || null;
+}
+
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+
+
+function averageWordLength (words) {
+  let counter = 0;
+  for (let word of words) {
+    counter += word.length;
+  } 
+  return counter / words.length || null;
+}
+
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -29,8 +72,38 @@ const wordsUnique = [
   'bring'
 ];
 
+function uniquifyArray(words) {
+  if (!words.length) {
+    return null;
+  }
+
+
+let newArr = [];
+
+for(let word of words) {
+  if(!newArr.includes(word)) {
+    newArr.push(word);
+  }
+}
+
+return newArr;
+
+}
+
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
+
+function doesWordExist(wordsFind, wordslook) {
+if (!wordsFind.length){
+  return null;
+}
+  for (let word of wordsFind) {
+    if (word == wordslook){
+      return true;
+    }
+  }
+  return false;
+}
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -46,6 +119,16 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
+
+function howManyTimes(arr, word1) {
+  let counter = 0;
+  for (let word of arr) {
+    if (word1 == word) {
+      counter++;
+    }
+  }
+  return counter;
+}
 
 // Iteration #8: Bonus
 
